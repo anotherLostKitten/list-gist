@@ -19,7 +19,7 @@ int main(){
     print_list(ll1);
     
     printf("de-structing All Star:\n");
-    ll1 = fee_list(ll1);
+    ll1 = free_list(ll1);
     printf("All Star destructed:\n\n");
     print_list(ll1);
     return 0;

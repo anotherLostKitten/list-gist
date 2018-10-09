@@ -5,7 +5,7 @@
 
 struct node* insert_front(struct node* head, unsigned char* str) {
   struct node* n = malloc(sizeof(struct node));
-  n->cargo = str;
+  bastrncpy(n->cargo, str, sizeof(n->cargo));
   n->next = head;
   head = n;
   return head;
@@ -20,11 +20,10 @@ struct node* free_list(struct node* head) {
   return NULL;
 }
 
-int print_list(struct node* head) {
+void print_list(struct node* head) {
   if (head) {
     printf("%s -> ", head->cargo);
-    print_ll(head->next);
+    print_list(head->next);
   } else
     printf("NULL\n");
-  return 0;
 }
